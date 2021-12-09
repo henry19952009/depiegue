@@ -9,6 +9,10 @@ import { InicioComponent } from './plantilla/inicio/inicio.component';
 import { ErrorComponent } from './plantilla/error/error.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductoDetallesComponent } from './plantilla/producto-detalles/producto-detalles.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxCaptchaModule } from 'ngx-captcha';
+import { CarruselImagenesComponent } from './plantilla/carrusel-imagenes/carrusel-imagenes.component';
+import { ModalComponent } from './plantilla/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +22,16 @@ import { ProductoDetallesComponent } from './plantilla/producto-detalles/product
     InicioComponent,
     ErrorComponent,
     ProductoDetallesComponent,
+    CarruselImagenesComponent,
+    ModalComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    NgxCaptchaModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

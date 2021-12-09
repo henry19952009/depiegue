@@ -8,56 +8,61 @@
       </div>
       <div class="col-sm-12 col-md-4 col-lg-5 p-2">
         <div class="card p-3 mb-5">
-          <h3>Detalles</h3>
-          <p>Vendido Por</p>
-          <p>Stock Disponible</p>
-          <label for="">Cantidad "Unidad"</label>
-          <div class="d-flex flex-column align-items-center mt-4">
-            <select
-              name=""
-              id=""
-              class="mb-3 form-control col-sm-8 col-md-10 col-lg-8"
-            >
-              <option value="">1</option>
-              <option value="">2</option>
-              <option value="">3</option>
-            </select>
-            <button
-              class="
-                btn btn-primary btn-lg
-                mb-3
-                pt-2
-                pb-2
-                col-sm-8 col-md-10 col-lg-8
-              "
-            >
-              Comprar Ahora
-            </button>
-            <button
-              class="
-                btn btn-warning btn-lg
-                mb-3
-                pt-2
-                pb-2
-                col-sm-8 col-md-10 col-lg-8
-              "
-            >
-              Agregar Al Carrito
-            </button>
-          </div>
-        </div>
-
-        <div class="card p-3">
-          <h3>Información del Vendedor</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
-            necessitatibus odit eius. Rerum quaerat suscipit sit quae
-            repudiandae, accusantium earum velit officia recusandae, reiciendis
-            sed. Incidunt facere voluptatibus possimus nobis? Commodi architecto
-            odio perferendis aut. Aspernatur quam quidem, voluptatibus at labore
-            modi sint, neque, laboriosam eos doloribus mollitia pariatur!
-            Eligendi, magni. Eum nobis minus error.000
+          <h3>{{ p_description }}</h3>
+          <h3>$ {{ p_total | number: "2.0-0" }}</h3>
+          <p>Vendido Por: <span class="text-secondary">Admin</span></p>
+          <p class="text-secondary">
+            <i class="far fa-credit-card fs-5 text-info"></i> Credito 36 Cuotas
           </p>
+          <p *ngIf="p_freeShipping" class="text-secondary">
+            <i class="fas fa-car fs-5 text-info"></i> Envío Gratis
+          </p>
+          <p *ngIf="!p_freeShipping" class="text-secondary">
+            <i class="fas fa-car fs-5 text-info"></i> Envío Por $10.000
+          </p>
+          <p>
+            Stock Disponible: <span class="text-secondary">{{ p_stock }}</span>
+          </p>
+          <form [formGroup]="fgValidador" (ngSubmit)="AgregarCarrito()">
+            <div class="input-group">
+              <span class="input-group-text">Cantidad "Unidad"</span>
+              <select
+                formControlName="cantidad"
+                name=""
+                class="form-control text-center"
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+              <!-- <input type="number" class="form-control" max="{{ p_stock }}" /> -->
+            </div>
+
+            <div class="d-flex flex-column align-items-center mt-4">
+              <button
+                class="
+                  btn btn-primary btn-lg
+                  mb-3
+                  pt-2
+                  pb-2
+                  col-sm-8 col-md-10 col-lg-8
+                "
+              >
+                Comprar Ahora
+              </button>
+              <button
+                class="
+                  btn btn-warning btn-lg
+                  mb-3
+                  pt-2
+                  pb-2
+                  col-sm-8 col-md-10 col-lg-8
+                "
+              >
+                Agregar Al Carrito
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

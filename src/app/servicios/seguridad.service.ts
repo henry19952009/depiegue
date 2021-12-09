@@ -43,6 +43,22 @@ export class SeguridadService {
     );
   }
 
+  RecuperarContraseña(
+    usuario: string,
+    clave: string
+  ): Observable<ModeloIdentificar> {
+    return this.http.post<ModeloIdentificar>(
+      `${this.url}/identificarEmail`,
+      {
+        user: usuario,
+        key: clave,
+      },
+      {
+        headers: new HttpHeaders({}),
+      }
+    );
+  }
+
   AlmacenarSesion(datos: ModeloIdentificar) {
     datos.estaIdentificado = true;
     let stringDatos = JSON.stringify(datos);

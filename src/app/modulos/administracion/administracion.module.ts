@@ -11,6 +11,8 @@ import { EditarProductoComponent } from './productos/editar-producto/editar-prod
 import { EliminarProductoComponent } from './productos/eliminar-producto/eliminar-producto.component';
 import { BuscarProductoComponent } from './productos/buscar-producto/buscar-producto.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxCaptchaModule } from 'ngx-captcha';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AdministracionRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxCaptchaModule,
+    RecaptchaModule,
   ],
 })
 export class AdministracionModule {}

@@ -10,15 +10,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./identificacion.component.css'],
 })
 export class IdentificacionComponent implements OnInit {
+  isRegister: boolean = false;
+  captcha: string = '';
+  email: string = '';
+
   fgValidador: FormGroup = this.fb.group({
     usuario: ['', [Validators.required, Validators.email]],
     clave: ['', [Validators.required]],
+    recaptcha: ['', [Validators.required]],
   });
   constructor(
     private fb: FormBuilder,
     private servicioSeguridad: SeguridadService,
     private router: Router
-  ) {}
+  ) {
+    this.captcha = '';
+    this.email = 'prueba@gmail.com';
+  }
 
   ngOnInit(): void {}
 
@@ -36,5 +44,11 @@ export class IdentificacionComponent implements OnInit {
         alert('Datos Invalidos');
       }
     );
+  }
+
+  resolved(captchaResponse: string) {
+    this.fgValidador.controls['recaptcha'].setValue('valid');
+    this.captcha = captchaResponse;
+    console.log('resolved captcha with response: ' + this.captcha);
   }
 }

@@ -81,8 +81,55 @@ img {
 /* Styles of User login */
 .login-card {
     background-color: rgba( 0, 0, 0, 0.90 ) !important;
+    width: 22rem;
+    height: 35rem;
+}
+
+.login-card a {
+    text-decoration: none;
+    color: white;
+}
+.login-card a:hover {
+    color: yellow !important;
+}
+
+.register-card {
+    background-color: rgba( 0, 0, 0, 0.90 ) !important;
+    width: 40rem;
+    height: 100%;
+}
+
+.register-card a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.register-card a:hover {
+    color:yellow !important; 
+}
+
+.card-recuperarClave {
+    height: 24rem;
     width: 20rem;
-    height: 27rem;
+    background-color: rgba( 0, 0, 0, 0.90 ) !important;
+}
+
+.card-recuperarClave a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.card-recuperarClave a:hover {
+    color:yellow !important; 
+}
+
+.card-perfil {
+    min-height: 30rem;
+    max-height: 80rem;
+    width: 100%;
+    background-color: rgba( 0, 0, 0, 0.90 ) !important;
 }
 
 

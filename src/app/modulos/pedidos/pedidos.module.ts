@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { PedidosRoutingModule } from './pedidos-routing.module';
 import { AsignarPedidoComponent } from './asignar-pedido/asignar-pedido.component';
+import { CarritoComprasComponent } from './carrito-compras/carrito-compras.component';
 
 
 @NgModule({
   declarations: [
-    AsignarPedidoComponent
+    AsignarPedidoComponent,
+    CarritoComprasComponent
   ],
   imports: [
     CommonModule,

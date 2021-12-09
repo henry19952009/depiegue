@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ConnectableObservable } from 'rxjs';
+import { ModeloCarrito } from 'src/app/modelos/carrito';
 import { ModeloProducto } from 'src/app/modelos/producto.modelo';
 import { ProductoService } from 'src/app/servicios/producto.service';
 
@@ -19,22 +22,17 @@ export class ProductoDetallesComponent implements OnInit {
   p_vat: number = 0;
   p_total: number = 0;
   p_image: string = '';
+  p_freeShipping: boolean = false;
 
-  // id?: string;
-  // name?: string;
-  // description?: string;
-  // stock?: number;
-  // unitValue?: number;
-  // discount?: number;
-  // vat?: number;
-  // total?: number;
-  // orderId?: string;
-  // image?: string;
+  fgValidador: FormGroup = this.fb.group({
+    cantidad: ['', [Validators.required]],
+  });
 
   constructor(
     private productoServicio: ProductoService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private fb: FormBuilder
   ) {}
 
   ngOnInit(): void {
@@ -57,6 +55,29 @@ export class ProductoDetallesComponent implements OnInit {
         this.p_vat = Number(this.registroProducto.vat);
         this.p_total = Number(this.registroProducto.total);
         this.p_image = String(this.registroProducto.image);
+        if (this.p_total > 70000) {
+          this.p_freeShipping = true;
+        } else {
+          this.p_freeShipping = false;
+        }
       });
+  }
+
+  AgregarCarrito() {
+    alert('Agregar Funcionando xD');
+    let cant = this.fgValidador.controls['cantidad'].value;
+    if (cant === '') {
+      cant = '1';
+    }
+    const datosCarrito: ModeloCarrito = {
+      id: this.id,
+      cantidad: cant,
+    };
+
+    console.log(datosCarrito);
+
+    let registros: ModeloCarrito[] = [];
+
+    //
   }
 }

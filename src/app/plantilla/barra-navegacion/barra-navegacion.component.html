@@ -42,7 +42,7 @@
               >Productos <i class="fas fa-clipboard-list"></i
             ></a>
           </li>
-          <li *ngIf="seInicioSesion" class="nav-item">
+          <!-- <li *ngIf="seInicioSesion" class="nav-item">
             <a routerLink="/seguridad/cambioclave" class="nav-link text-white"
               >Cambiar Clave <i class="fas fa-key"></i>
             </a>
@@ -51,10 +51,55 @@
             <a routerLink="/seguridad/cerrarSesion" class="nav-link text-white">
               Cerrar Sesión <i class="fas fa-times-circle"></i>
             </a>
+          </li> -->
+          <li *ngIf="seInicioSesion" class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle text-white"
+              data-bs-toggle="dropdown"
+              href="#"
+              role="button"
+              aria-expanded="false"
+              ><i class="fas fa-user-circle"></i> Usuario</a
+            >
+            <ul class="dropdown-menu bg-dark">
+              <li *ngIf="seInicioSesion" class="dropdown-item nav-item">
+                <a
+                  routerLink="/seguridad/cambioclave"
+                  class="nav-link text-white"
+                  >Cambiar Clave
+                </a>
+              </li>
+              <li *ngIf="seInicioSesion" class="dropdown-item nav-item">
+                <a
+                  routerLink="/administracion/perfil"
+                  class="nav-link text-white"
+                >
+                  Perfil
+                </a>
+              </li>
+              <li *ngIf="seInicioSesion" class="dropdown-item nav-item">
+                <a
+                  routerLink="/seguridad/cerrarSesion"
+                  class="nav-link text-white"
+                >
+                  Cerrar Sesión
+                </a>
+              </li>
+              <!-- <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li> -->
+            </ul>
           </li>
           <li *ngIf="!seInicioSesion" class="nav-item">
             <a routerLink="/seguridad/identificar" class="nav-link text-white"
               >Iniciar Sesión <i class="fas fa-sign-in-alt"></i>
+            </a>
+          </li>
+          <li *ngIf="!seInicioSesion" class="nav-item">
+            <a
+              routerLink="/administracion/crear-persona"
+              class="nav-link text-white"
+              >Registrarse <i class="fas fa-sign-in-alt"></i>
             </a>
           </li>
         </ul>
@@ -92,6 +137,16 @@
           text-center
         "
         >Tarjetas De Regalo</a
+      >
+      <a
+        href="#"
+        class="
+          nav-link
+          text-white
+          col-12 col-sm-6 col-md-3 col-lg-2
+          text-center
+        "
+        >Categoría</a
       >
     </nav>
   </div>

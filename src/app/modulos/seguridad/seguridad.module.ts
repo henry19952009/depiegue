@@ -7,6 +7,10 @@ import { CambioClaveComponent } from './cambio-clave/cambio-clave.component';
 import { RecuperarClaveComponent } from './recuperar-clave/recuperar-clave.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CerrarSesionComponent } from './cerrar-sesion/cerrar-sesion.component';
+import { RegistroComponent } from './registro/registro.component';
+import { CaptchaComponent } from './captcha/captcha.component';
+import { NgxCaptchaModule } from 'ngx-captcha';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 @NgModule({
   declarations: [
@@ -14,12 +18,16 @@ import { CerrarSesionComponent } from './cerrar-sesion/cerrar-sesion.component';
     CambioClaveComponent,
     RecuperarClaveComponent,
     CerrarSesionComponent,
+    RegistroComponent,
+    CaptchaComponent,
   ],
   imports: [
     CommonModule,
     SeguridadRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxCaptchaModule,
+    RecaptchaModule,
   ],
 })
 export class SeguridadModule {}

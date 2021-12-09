@@ -10,7 +10,7 @@ import { SeguridadService } from 'src/app/servicios/seguridad.service';
 })
 export class BarraNavegacionComponent implements OnInit {
   seInicioSesion: boolean = false;
-
+  nombrePersona: string = '';
   subs: Subscription = new Subscription();
 
   constructor(private seguridadServicio: SeguridadService) {}
