@@ -131,6 +131,8 @@ img {
     width: 100%;
     background-color: rgba( 0, 0, 0, 0.90 ) !important;
 }
-
+.izquierda{
+    background-position: bottom right;
+}
 
 /* Styles of Page Products */
