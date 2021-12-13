@@ -27,6 +27,7 @@
     "crypto-js": "^4.1.1",
     "express": "^4.17.1",
     "font-awesome": "^4.7.0",
+    "hover.css": "^2.3.2",
     "jquery": "^3.6.0",
     "materialize-css": "^1.0.0-rc.2",
     "ng-recaptcha": "^9.0.0",

@@ -1,14 +1,20 @@
-<div>
-  <img src="../../../assets/Images/banner.webp" alt="" />
+<div class="slider">
+  <ul>
+     <li><img class="hvr-grow  " src="../../../assets/Images/banner.webp" alt="" /></li>
+     <li><img class="hvr-grow " src="https://bunny.pcware.com.co/wp-content/uploads/2021/08/computadores.jpg" alt="" /></li>
+     <li><img class="hvr-grow " src="https://www.kamaleon.com.co/archivos/banner/monitores_d.jpg" alt="" /></li>
+     <li><img class="hvr-grow " src="" alt="" /></li>
+  </ul>
 </div>
+
+
 <section class="mycontainer mt-4" style="height: 100%">
   <h3 class="text-secondary mb-3">Ofertas</h3>
   <div class="row">
     <div
       *ngFor="let p of listadoRegistros"
       class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
-      id="card-portatil"
-    >
+      id="card-portatil">
       <div class="card mycard">
         <div class="card-img pt-2 pb-2">
           <img src="{{ p.image }}" alt="imagenDeBaseDeDatos" />
